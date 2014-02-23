@@ -27,6 +27,8 @@ public class MainActivity extends ActionBarActivity {
 
     String[] answerArray1 = {"CHR","IST","IAN"};
     String answerString1 =  concatenateLines(answerArray1);
+	String[] answerArray2 = {"MAR","IET","TA"};
+	String answerString2 = concatenateLines(answerArray2);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

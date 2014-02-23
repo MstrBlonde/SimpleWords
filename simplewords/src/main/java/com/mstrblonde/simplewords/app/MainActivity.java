@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -80,18 +81,23 @@ public class MainActivity extends ActionBarActivity {
         btn_03.setTextOn(answerArray1[2]);
         btn_03.setTextOff(answerArray1[2]);
 
+	    //LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+	    //params.setMargins(0, 0, 0, 0);
+	    LinearLayout layout;
+	    layout = (LinearLayout) findViewById(R.id.button_row1);
+
+
         btn_01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if(isChecked) {
-                    currentGuess += answerArray1[0];
-                    answer.setText(currentGuess);
-                    btn_01.setEnabled(false);
-                }
-                else {
-                    btn_01.setEnabled(true);
-                }
-            }
+	        @Override
+	        public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+		        if (isChecked) {
+			        currentGuess += answerArray1[0];
+			        answer.setText(currentGuess);
+			        btn_01.setEnabled(false);
+		        } else {
+			        btn_01.setEnabled(true);
+		        }
+	        }
         });
 
         btn_02.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

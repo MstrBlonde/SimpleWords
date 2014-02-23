@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Simple Words</string>
+
+    <string name="guess_button">Guess</string>
+    <string name="answer">null</string>
+    <string name="x">x</string>
+
+    <string name="button_text">ABC</string>
+
+    <string name="hint_01">My first name</string>
+    <string name="hint_02">Some text here</string>
+
+    <string name="action_settings">Settings</string>
+
+</resources>

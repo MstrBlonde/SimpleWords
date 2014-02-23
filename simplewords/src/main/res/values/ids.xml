@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="button_row1" type="id"/>
+    <item name="button_row2" type="id"/>
+</resources>

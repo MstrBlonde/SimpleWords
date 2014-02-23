@@ -6,11 +6,11 @@
               android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/button_row"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="top"
         android:layout_marginTop="0dp"
         android:baselineAligned="false">
 
@@ -19,23 +19,8 @@
             android:layout_height="wrap_content"
             android:textOff="@string/button_text"
             android:textOn="@string/button_text"
-            android:id="@+id/btn_01"
+            android:id="@+id/btn"
             android:layout_weight="1"/>
 
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textOff="@string/button_text"
-            android:textOn="@string/button_text"
-            android:id="@+id/btn_02"
-            android:layout_weight="1"/>
-
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textOff="@string/button_text"
-            android:textOn="@string/button_text"
-            android:id="@+id/btn_03"
-            android:layout_weight="1"/>
     </LinearLayout>
 </LinearLayout>

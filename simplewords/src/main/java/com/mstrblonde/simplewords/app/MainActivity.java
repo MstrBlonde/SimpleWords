@@ -22,9 +22,9 @@ public class MainActivity extends ActionBarActivity {
     TextView hint_01;
     TextView hint_02;
 
-    ToggleButton btn_01;
-    ToggleButton btn_02;
-    ToggleButton btn_03;
+	Button btn_01;
+	Button btn_02;
+	Button btn_03;
 
     String[] answerArray1 = {"CHR","IST","IAN"};
     String answerString1 =  concatenateLines(answerArray1);
@@ -50,9 +50,6 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View view) {
                 answer.setText("");
                 currentGuess = "";
-                btn_01.setChecked(false);
-                btn_02.setChecked(false);
-                btn_03.setChecked(false);
                 btn_01.setEnabled(true);
                 btn_02.setEnabled(true);
                 btn_03.setEnabled(true);
@@ -61,72 +58,55 @@ public class MainActivity extends ActionBarActivity {
 
         hint_01 = (TextView) findViewById(R.id.hint_01);
         tempHint = (String) hint_01.getText();
-        hint_01.setText("1. " + tempHint + " - " + answerString1);
+        hint_01.setText("1. " + tempHint);
 
         hint_02 = (TextView) findViewById(R.id.hint_02);
         tempHint = (String) hint_02.getText();
         hint_02.setText("2. " + tempHint);
 
-        btn_01 = (ToggleButton) findViewById(R.id.btn_01);
-        btn_02 = (ToggleButton) findViewById(R.id.btn_02);
-        btn_03 = (ToggleButton) findViewById(R.id.btn_03);
+        btn_01 = (Button) findViewById(R.id.btn_01);
+        btn_02 = (Button) findViewById(R.id.btn_02);
+        btn_03 = (Button) findViewById(R.id.btn_03);
 
         btn_01.setText(answerArray1[0]);
-        btn_01.setTextOn(answerArray1[0]);
-        btn_01.setTextOff(answerArray1[0]);
         btn_02.setText(answerArray1[1]);
-        btn_02.setTextOn(answerArray1[1]);
-        btn_02.setTextOff(answerArray1[1]);
         btn_03.setText(answerArray1[2]);
-        btn_03.setTextOn(answerArray1[2]);
-        btn_03.setTextOff(answerArray1[2]);
 
 	    LinearLayout layout;
 	    layout = (LinearLayout) findViewById(R.id.button_row);
 	    //layout.setId(R.id.button_row2);
-	    ToggleButton btn_04;
-	    btn_04 = (ToggleButton) findViewById(R.id.btn);
-	    layout.addView(btn_04);
+	    Button btn_04 = new Button(this);
+	    //layout.addView(btn_01);
+
+	    btn_01.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+			    currentGuess += answerArray1[0];
+			    answer.setText(currentGuess);
+			    btn_01.setEnabled(false);
+		    }
+	    });
+
+	    btn_02.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+			    currentGuess += answerArray1[1];
+			    answer.setText(currentGuess);
+			    btn_02.setEnabled(false);
+		    }
+	    });
 
 
-        btn_01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-	        @Override
-	        public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-		        if (isChecked) {
-			        currentGuess += answerArray1[0];
-			        answer.setText(currentGuess);
-			        btn_01.setEnabled(false);
-		        } else {
-			        btn_01.setEnabled(true);
-		        }
-	        }
-        });
+	    btn_03.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+			    currentGuess += answerArray1[2];
+			    answer.setText(currentGuess);
+			    btn_03.setEnabled(false);
+		    }
+	    });
 
-        btn_02.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked) {
-                    currentGuess += answerArray1[1];
-                    answer.setText(currentGuess);
-                    btn_02.setEnabled(false);
-                } else {
-                    btn_02.setEnabled(true);
-                }
-            }
-        });
 
-        btn_03.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked) {
-                    currentGuess += answerArray1[2];
-                    answer.setText(currentGuess);
-                    btn_03.setEnabled(false);
-                } else {
-                    btn_03.setEnabled(true);
-                }
-            }
-        });
 
     }
 

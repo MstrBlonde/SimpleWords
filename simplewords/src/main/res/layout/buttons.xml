@@ -14,11 +14,10 @@
         android:layout_marginTop="0dp"
         android:baselineAligned="false">
 
-        <ToggleButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOff="@string/button_text"
-            android:textOn="@string/button_text"
+            android:text="@string/button_text"
             android:id="@+id/btn"
             android:layout_weight="1"/>
 

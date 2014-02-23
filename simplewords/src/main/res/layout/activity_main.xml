@@ -71,25 +71,22 @@
         android:baselineAligned="false">
 
 
-        <ToggleButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOff="@string/button_text"
-            android:textOn="@string/button_text"
+            android:text="@string/button_text"
             android:id="@+id/btn_01"
             android:layout_weight="1"/>
-        <ToggleButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOff="@string/button_text"
-            android:textOn="@string/button_text"
+            android:text="@string/button_text"
             android:id="@+id/btn_02"
             android:layout_weight="1"/>
-        <ToggleButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOff="@string/button_text"
-            android:textOn="@string/button_text"
+            android:text="@string/button_text"
             android:id="@+id/btn_03"
             android:layout_weight="1"/>
     </LinearLayout>

@@ -72,11 +72,7 @@ public class MainActivity extends ActionBarActivity {
         btn_02.setText(answerArray1[1]);
         btn_03.setText(answerArray1[2]);
 
-	    LinearLayout layout;
-	    layout = (LinearLayout) findViewById(R.id.button_row);
-	    //layout.setId(R.id.button_row2);
-	    Button btn_04 = new Button(this);
-	    //layout.addView(btn_01);
+
 
 	    btn_01.setOnClickListener(new View.OnClickListener() {
 		    @Override

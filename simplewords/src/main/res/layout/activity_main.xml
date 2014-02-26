@@ -58,35 +58,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+    </LinearLayout>
 
-        </LinearLayout>
-
-    <GridLayout android:id="@+id/GridLayout1"
+    <LinearLayout android:id="@+id/button_grid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="3"
-                android:rowCount="2"
-                android:orientation="horizontal" >
+                >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_text"
             android:id="@+id/btn_01"
-            android:layout_gravity="fill_horizontal"/>
+            android:layout_weight="1"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_text"
             android:id="@+id/btn_02"
-            android:layout_gravity="fill_horizontal"/>
+            android:layout_weight="1"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_text"
             android:id="@+id/btn_03"
-            android:layout_gravity="fill_horizontal"/>
-    </GridLayout>
+            android:layout_weight="1"/>
+    </LinearLayout>
 
 
 </LinearLayout>

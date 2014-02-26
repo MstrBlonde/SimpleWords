@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -72,7 +73,11 @@ public class MainActivity extends ActionBarActivity {
         btn_02.setText(answerArray1[1]);
         btn_03.setText(answerArray1[2]);
 
-
+	    ViewGroup linearLayout = (ViewGroup) findViewById(R.id.button_row);
+	    Button bt = new Button(this);
+	    bt.setText("A Button");
+	    bt.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+	    linearLayout.addView(bt);
 
 	    btn_01.setOnClickListener(new View.OnClickListener() {
 		    @Override
@@ -101,8 +106,6 @@ public class MainActivity extends ActionBarActivity {
 			    btn_03.setEnabled(false);
 		    }
 	    });
-
-
 
     }
 

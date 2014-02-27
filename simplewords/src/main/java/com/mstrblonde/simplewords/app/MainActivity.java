@@ -1,7 +1,9 @@
 package com.mstrblonde.simplewords.app;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +28,7 @@ public class MainActivity extends ActionBarActivity {
 	Button btn_01;
 	Button btn_02;
 	Button btn_03;
+	Button btn_04;
 
     String[] answerArray1 = {"CHR","IST","IAN"};
     String answerString1 =  concatenateLines(answerArray1);
@@ -73,11 +76,23 @@ public class MainActivity extends ActionBarActivity {
         btn_02.setText(answerArray1[1]);
         btn_03.setText(answerArray1[2]);
 
-	    ViewGroup linearLayout = (ViewGroup) findViewById(R.id.button_row);
-	    Button bt = new Button(this);
-	    bt.setText("A Button");
-	    bt.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-	    linearLayout.addView(bt);
+	    LinearLayout l_layout = (LinearLayout) findViewById(R.id.button_grid_template);
+	    l_layout.setOrientation(LinearLayout.HORIZONTAL);
+
+	    Button btn_04 = new Button(this);
+	    btn_04.setText("Button_text");
+
+	    l_layout.addView(btn_04);
+
+	    btn_04.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+			    currentGuess += answerArray1[0];
+			    answer.setText(currentGuess);
+			    //btn_04.setEnabled(false);
+		    }
+	    });
+
 
 	    btn_01.setOnClickListener(new View.OnClickListener() {
 		    @Override

@@ -1,6 +1,7 @@
 package com.mstrblonde.simplewords.app;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends ActionBarActivity {
@@ -76,7 +78,29 @@ public class MainActivity extends ActionBarActivity {
         btn_02.setText(answerArray1[1]);
         btn_03.setText(answerArray1[2]);
 
-	    LinearLayout l_layout = (LinearLayout) findViewById(R.id.button_grid_template);
+	    LinearLayout linear;
+	    for (int i = 1; i <= 3; i++) {
+		    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+				    LinearLayout.LayoutParams.MATCH_PARENT,
+				    LinearLayout.LayoutParams.WRAP_CONTENT);
+		    Button btn = new Button(this);
+		    btn.setId(i);
+		    final int id_ = btn.getId();
+		    btn.setText("button " + id_);
+		    btn.setBackgroundColor(Color.rgb(70, 80, 90));
+		    linear.addView(btn, params);
+		    Button btn1;
+		    btn1 = ((Button) findViewById(id_));
+		    btn1.setOnClickListener(new View.OnClickListener() {
+			    public void onClick(View view) {
+				    Toast.makeText(view.getContext(),
+						    "Button clicked index = " + id_, Toast.LENGTH_SHORT)
+						    .show();
+			    }
+		    });
+	    }
+
+	    /*LinearLayout l_layout = (LinearLayout) findViewById(R.id.button_grid_template);
 	    l_layout.setOrientation(LinearLayout.HORIZONTAL);
 
 	    Button btn_04 = new Button(this);
@@ -91,7 +115,7 @@ public class MainActivity extends ActionBarActivity {
 			    answer.setText(currentGuess);
 			    //btn_04.setEnabled(false);
 		    }
-	    });
+	    });*/
 
 
 	    btn_01.setOnClickListener(new View.OnClickListener() {

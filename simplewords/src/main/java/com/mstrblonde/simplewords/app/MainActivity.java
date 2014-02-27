@@ -78,35 +78,16 @@ public class MainActivity extends ActionBarActivity {
         btn_02.setText(answerArray1[1]);
         btn_03.setText(answerArray1[2]);
 
-	    LinearLayout linear;
-	    for (int i = 1; i <= 3; i++) {
-		    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-				    LinearLayout.LayoutParams.MATCH_PARENT,
-				    LinearLayout.LayoutParams.WRAP_CONTENT);
-		    Button btn = new Button(this);
-		    btn.setId(i);
-		    final int id_ = btn.getId();
-		    btn.setText("button " + id_);
-		    btn.setBackgroundColor(Color.rgb(70, 80, 90));
-		    linear.addView(btn, params);
-		    Button btn1;
-		    btn1 = ((Button) findViewById(id_));
-		    btn1.setOnClickListener(new View.OnClickListener() {
-			    public void onClick(View view) {
-				    Toast.makeText(view.getContext(),
-						    "Button clicked index = " + id_, Toast.LENGTH_SHORT)
-						    .show();
-			    }
-		    });
-	    }
 
-	    /*LinearLayout l_layout = (LinearLayout) findViewById(R.id.button_grid_template);
-	    l_layout.setOrientation(LinearLayout.HORIZONTAL);
+	    LinearLayout button_layout = (LinearLayout) findViewById(R.id.button_grid_template);
+	    
+	    button_layout.setOrientation(LinearLayout.HORIZONTAL);
 
-	    Button btn_04 = new Button(this);
-	    btn_04.setText("Button_text");
+	    Button new_btn = new Button(this);
+	    new_btn.setId(4);
+	    new_btn.setText("Button_text");
 
-	    l_layout.addView(btn_04);
+	    button_layout.addView(btn_04);
 
 	    btn_04.setOnClickListener(new View.OnClickListener() {
 		    @Override
@@ -115,7 +96,7 @@ public class MainActivity extends ActionBarActivity {
 			    answer.setText(currentGuess);
 			    //btn_04.setEnabled(false);
 		    }
-	    });*/
+	    });
 
 
 	    btn_01.setOnClickListener(new View.OnClickListener() {

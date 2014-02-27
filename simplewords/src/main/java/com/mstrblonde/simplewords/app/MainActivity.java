@@ -78,14 +78,42 @@ public class MainActivity extends ActionBarActivity {
         btn_02.setText(answerArray1[1]);
         btn_03.setText(answerArray1[2]);
 
+	    for (int i = 1; i <= 3; i++) {
+	    //int i = 1;
+	    Button btn1;
 
-	    LinearLayout button_layout = (LinearLayout) findViewById(R.id.button_grid_template);
-	    
+		    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+				    LinearLayout.LayoutParams.MATCH_PARENT,
+				    LinearLayout.LayoutParams.MATCH_PARENT, 1.0f);
+
+		    LinearLayout button_layout = (LinearLayout) findViewById(R.id.button_grid_template);
+		    button_layout.setOrientation(LinearLayout.HORIZONTAL);
+
+		    Button btn = new Button(this);
+		    btn.setLayoutParams(params);
+		    btn.setId(i);
+		    final int id_ = btn.getId();
+		    btn.setText("button " + id_);
+		    //btn.setBackgroundColor(Color.rgb(70, 80, 90));
+			btn.setGravity(1);
+		    button_layout.addView(btn);
+		    btn1 = ((Button) findViewById(id_));
+		    btn1.setOnClickListener(new View.OnClickListener() {
+			    public void onClick(View view) {
+				    Toast.makeText(view.getContext(),
+						    "Button clicked index = " + id_, Toast.LENGTH_SHORT)
+						    .show();
+			    }
+		    });
+	    }
+
+	    /*LinearLayout button_layout = (LinearLayout) findViewById(R.id.button_grid_template);
+
 	    button_layout.setOrientation(LinearLayout.HORIZONTAL);
 
-	    Button new_btn = new Button(this);
-	    new_btn.setId(4);
-	    new_btn.setText("Button_text");
+	    Button btn_04 = new Button(this);
+	    //btn_04.setId(4);
+	    btn_04.setText("Button_text");
 
 	    button_layout.addView(btn_04);
 
@@ -96,7 +124,7 @@ public class MainActivity extends ActionBarActivity {
 			    answer.setText(currentGuess);
 			    //btn_04.setEnabled(false);
 		    }
-	    });
+	    });*/
 
 
 	    btn_01.setOnClickListener(new View.OnClickListener() {
